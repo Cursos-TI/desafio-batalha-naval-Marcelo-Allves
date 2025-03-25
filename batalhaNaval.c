@@ -86,7 +86,11 @@ void aplicarHabilidade3x3(int tabuleiro[TAMANHO][TAMANHO], int habilidade[3][3],
 }
 
 void exibirTabuleiro(int tabuleiro[TAMANHO][TAMANHO]) {
+    printf("   A B C D E F G H I J\n"); // Cabeçalho das colunas
+
     for (int i = 0; i < TAMANHO; i++) {
+        printf("%2d ", i + 1); // Numeração das linhas
+
         for (int j = 0; j < TAMANHO; j++) {
             printf("%d ", tabuleiro[i][j]);
         }
@@ -99,7 +103,7 @@ int main() {
 
     inicializarTabuleiro(tabuleiro);
 
-    // Coordenadas iniciais dos navios (definidas diretamente no código)
+    // Coordenadas iniciais dos navios
     int linhaNavioHorizontal = 2, colunaNavioHorizontal = 3;
     int linhaNavioVertical = 5, colunaNavioVertical = 7;
     int linhaNavioDiagonal1 = 0, colunaNavioDiagonal1 = 0;
@@ -135,9 +139,9 @@ int main() {
     };
 
     // Aplica habilidades no tabuleiro
-    aplicarHabilidade(tabuleiro, cone, 5, 9, 2); // Exemplo de aplicação da habilidade cone
-    aplicarHabilidade5x3(tabuleiro, cruz, 2, 7); // Exemplo de aplicação da habilidade cruz
-    aplicarHabilidade3x3(tabuleiro, octaedro, 5, 2); // Exemplo de aplicação da habilidade octaedro
+    aplicarHabilidade(tabuleiro, cone, 5, 9, 2); // Aplica habilidade cone
+    aplicarHabilidade5x3(tabuleiro, cruz, 2, 7); // Aplica habilidade cruz
+    aplicarHabilidade3x3(tabuleiro, octaedro, 5, 2); // Aplica habilidade octaedro
 
     // Exibe o tabuleiro
     exibirTabuleiro(tabuleiro);
